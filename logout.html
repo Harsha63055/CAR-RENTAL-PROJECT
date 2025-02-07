@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #login{
+            border: 2px solid black;
+
+            text-align: center;
+            padding: 40px 20px;
+            width: 300px;
+            margin-right: auto;
+            margin-left: auto;
+            margin-top: 50px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px;
+        }
+        #lbtn{
+            width: 100px;
+            font-size: 20px;
+            background-color: rgb(129, 189, 241);
+            border:none ;
+            border-radius: 10px;
+
+        }
+        #lbtn:hover{
+            background-color: rgb(117, 107, 107);
+            color: rgb(238, 229, 229);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div>
+            <a href=""><img src="./carLogo.png" alt=""></a>
+            </div>
+            <div id="login">
+                <form action="">
+                    <label for="name" style="font-size: 30px;">Username </label><br><br>
+                    <input type="text" name="username" name="username" id="user"><br><br>
+                    <label for="pswd" style="font-size: 30px;">Password </label><br><br>
+                    <input type="password" name="pswd" id="pass"><br><br>
+                    <input type="submit" value="Login" id="lbtn" formaction="./index.html">
+                    <p>Not have an account?<a href="" style="text-decoration: none;"> Signup</a></p>        
+                </form>
+            </div>
+    </div>
+</body>
+</html>
