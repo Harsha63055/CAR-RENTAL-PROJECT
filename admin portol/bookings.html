@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Management</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><img src="../carLogo.png" width="100px" alt=""></div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="./ADhome.html">Dashboard</a></li>
+            <li><a href="./cars.html">Cars</a></li>
+            <li><a href="./bookings.html">Bookings</a></li>
+            <li><a href="./users.html">Users</a></li>
+            <!-- <li><a href="#settings">Settings</a></li> -->
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="bookings">
+            <h1>Booking Management</h1>
+            <p>Manage customer bookings.</p>
+            <table border="1">
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Customer Name</th>
+                    <th>Car Model</th>
+                    <th>Pickup Date</th>
+                    <th>Return Date</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>Tesla Model 3</td>
+                    <td>2024-02-10</td>
+                    <td>2024-02-15</td>
+                    <td><button>Edit</button> <button>Delete</button></td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>

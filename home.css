@@ -102,6 +102,7 @@ body {
   background-image: url(https://imgs.search.brave.com/ryu3YjPKMyDtUy6yZv6kn14hz8awHuvbnA5BurfDWKY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zcHlu/ZS1zdGF0aWMuczMu/YW1hem9uYXdzLmNv/bS9BSS10b29scy9i/YWNrZ3JvdW5kK3Jl/cGxhY2VtZW50L2Fm/dHJycisxLndlYnA);
   padding: 20px;
   border-radius: 10px;
+  width: 250px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
