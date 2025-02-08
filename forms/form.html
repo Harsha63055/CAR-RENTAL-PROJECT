@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>Car Rental Job Form</h2>
+    <h2>Car Rental Form</h2>
     <form id="rentalForm">
         <label for="name">Name:</label>
         <input type="text" id="name" required>
@@ -21,12 +21,16 @@
         <label for="price">Price Per Day:</label>
         <input type="number" id="price" required>
 
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button><br><br>
     </form>
+    <form>
+    <input type="submit" value="goback" style="width: 60px;border-radius:20px" formaction="../account.html">
+    </form>
+    <p id="successMessage" style="color: green; display: none;">Submitted successfully!</p>
 
     <script>
         document.getElementById("rentalForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Prevent page reload
 
             let name = document.getElementById("name").value;
             let car = document.getElementById("car").value;
@@ -37,7 +41,17 @@
             rentals.push({ name, car, days, price });
             localStorage.setItem("rentals", JSON.stringify(rentals));
 
-            window.location.href = "../ADMIN/users.html"; // Redirect to the table page
+            // Show success message
+            let successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block";
+
+            // Clear form fields
+            document.getElementById("rentalForm").reset();
+
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 3000);
         });
     </script>
 </body>
