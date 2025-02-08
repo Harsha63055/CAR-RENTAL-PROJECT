@@ -1,33 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" href="cart.css">
-    <script src="cart.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="cart.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="">
-                <div class="logo"><img src="./carLogo.png" alt="" width="100px"></div>
-                </a>
-            <ul class="nav-links">
-                <li><a href="home.html"> Home</a></li>
-                <li><a href="cart.html">My Trips</a></li>
-                <li><a href="account.html">User Account</a></li>
-            </ul>
-            
-        </nav>
-    </header>
-    
-    <section class="cart-container">
-        <h1>Your Cart</h1>
-        <div class="cart-items">
-            <p>No items in the cart</p>
-        </div>
-        <button class="checkout-btn">Proceed to Checkout</button>
-    </section>
+    <nav class="navbar">
+        <div class="logo">🚗 Car Rental</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <ul class="nav-links">
+            <li><a href="./home.html">Home</a></li>
+            <li><a href="./cart.html">My Trips</a></li>
+            <li><a href="./account.html">Profile</a></li>
+            <li><a href="./index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="cart-container">
+        <h2>Your Cart</h2>
+        <div id="cart-items"></div>
+        <button onclick="clearCart()" class="clear-cart">Clear Cart</button>
+        <button onclick="proceedToCheckOut()" class="checkout-button">Proceed to Checkout</button> </div>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector(".nav-links").classList.toggle("active");
+        }
+
+        function displayCart() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = ''; // Clear previous items
+
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            if (cart.length === 0) {
+                cartItemsDiv.innerHTML = "<p>Your cart is empty.</p>";
+                return;
+            }
+
+            cart.forEach(item => {
+                const itemDiv = document.createElement('div');
+                itemDiv.innerHTML = `
+                    <h3>${item.name}</h3>
+                    <p>Driver: ${item.driver}</p>
+                    <p>Price: ${item.price}</p>
+                    <hr>
+                `;
+                cartItemsDiv.appendChild(itemDiv);
+            });
+        }
+
+        function clearCart() {
+            localStorage.removeItem('cart');
+            displayCart(); // Update the displayed cart
+        }
+
+        function proceedToCheckOut() {
+            // Here you would typically perform checkout logic, like sending data to a server,
+            // redirecting to a payment page, etc.  For this example, we'll just clear the cart.
+            localStorage.removeItem('cart');
+            alert("Thank you for your booking!"); // Or redirect to a thank you/confirmation page
+            displayCart();// Update the cart display to show it's empty
+        }
+
+        // Display the cart items when the page loads
+        displayCart();
+    </script>
 </body>
 </html>

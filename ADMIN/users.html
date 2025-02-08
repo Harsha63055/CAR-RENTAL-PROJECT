@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Car Rental Admin</title>
-    <link rel="stylesheet" href="adminhome.css">
+    <title>User Management</title>
+    <link rel="stylesheet" href="users.css">
 </head>
 <body>
     <nav class="navbar">
@@ -15,15 +15,33 @@
             <li><a href="./cars.html">Cars</a></li>
             <li><a href="./bookings.html">Bookings</a></li>
             <li><a href="./users.html">Users</a></li>
-            <!-- <li><a href="#settings">Settings</a></li> -->
+            <li><a href="../admin.html">Logout</a></li>
         </ul>
     </nav>
+    
     <main>
-        <section id="dashboard">
-            <h1>Dashboard</h1>
-            <p>Welcome to the admin portal.</p>
+        <section id="users">
+            <h1>User Management</h1>
+            <p>Manage registered users.</p>
+            <table border="1">
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Jane Doe</td>
+                    <td>jane.doe@example.com</td>
+                    <td>Admin</td>
+                    <td><button>Edit</button> <button>Delete</button></td>
+                </tr>
+            </table>
         </section>
     </main>
+    
     <script>
         function toggleMenu() {
             var menu = document.getElementById("navLinks");
