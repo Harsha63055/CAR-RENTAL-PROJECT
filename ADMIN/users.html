@@ -19,27 +19,41 @@
         </ul>
     </nav>
     
-    <main>
-        <section id="users">
-            <h1>User Management</h1>
-            <p>Manage registered users.</p>
-            <table border="1">
-                <tr>
-                    <th>User ID</th>
-                    <th>Name</th>
-                    <th>Role</th>
-                    <th>Actions</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>Jane Doe</td>
-                    <td>Admin</td>
-                    <td><button>Edit</button> <button>Delete</button></td>
-                </tr>
-            </table>
-        </section>
-    </main>
-    
+    <h2 style="text-align: center;">User Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Car Model</th>
+                <!-- <th>Days</th> -->
+                <th>Price Per Day</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody id="rentalTableBody"></tbody>
+    </table>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let rentals = JSON.parse(localStorage.getItem("rentals")) || [];
+            let tableBody = document.getElementById("rentalTableBody");
+
+            if (rentals.length === 0) {
+                tableBody.innerHTML = "<tr><td colspan='5'>No data available</td></tr>";
+            } else {
+                rentals.forEach(rental => {
+                    let row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td>${rental.name}</td>
+                        <td>${rental.car}</td>
+                        <td>${rental.price}/-</td>
+                        <td>${rental.days * rental.price}/-</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            }
+        });
+    </script>
     <script>
         function toggleMenu() {
             var menu = document.getElementById("navLinks");
@@ -48,3 +62,4 @@
     </script>
 </body>
 </html>
+
