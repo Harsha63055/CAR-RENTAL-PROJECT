@@ -6,7 +6,6 @@
     <title>Car Rental Portal</title>
     <link rel="stylesheet" href="home.css" />
     <style>
-      /* Basic styling for demonstration */
       .car-card {
         border: 1px solid #ccc;
         padding: 10px;
@@ -31,9 +30,38 @@
       <div class="car-list">
         <script>
           const cars = [
-            { name: "Toyota Corolla", driver: "John Doe", price: "$40/day" },
-            { name: "Honda Civic", driver: "Mike Ross", price: "$45/day" },
-            // ... (rest of your car data)
+            { name: "Maruti Suzuki Swift", driver: "Aarav Sharma", price: "₹800/day" },
+            { name: "Hyundai Creta", driver: "Priya Patel", price: "₹1200/day" },
+            { name: "Tata Nexon", driver: "Rahul Singh", price: "₹900/day" },
+            { name: "Mahindra XUV700", driver: "Diya Yadav", price: "₹1500/day" },
+            { name: "Kia Seltos", driver: "Aryan Reddy", price: "₹1100/day" },
+            { name: "Honda City", driver: "Anika Choudhury", price: "₹1000/day" },
+            { name: "Toyota Innova Crysta", driver: "Vikram Joshi", price: "₹1800/day" },
+            { name: "Ford EcoSport", driver: "Simran Kaur", price: "₹950/day" },
+            { name: "Renault Duster", driver: "Aditya Verma", price: "₹850/day" },
+            { name: "Nissan Magnite", driver: "Isha Gupta", price: "₹750/day" },
+            { name: "Volkswagen Polo", driver: "Rohan Kumar", price: "₹800/day" },
+            { name: "Skoda Kushaq", driver: "Neha Singh", price: "₹1050/day" },
+            { name: "MG Hector", driver: "Karan Patel", price: "₹1300/day" },
+            { name: "Jeep Compass", driver: "Saanvi Yadav", price: "₹1400/day" },
+            { name: "BMW 3 Series", driver: "Arjun Reddy", price: "₹2500/day" },
+            { name: "Mercedes-Benz C-Class", driver: "Aishwarya Choudhury", price: "₹2800/day" },
+            { name: "Audi A4", driver: "Vivek Joshi", price: "₹2200/day" },
+            { name: "Jaguar XF", driver: "Ananya Kaur", price: "₹3000/day" },
+            { name: "Land Rover Defender", driver: "Dhruv Verma", price: "₹3500/day" },
+            { name: "Volvo XC90", driver: "Ishaan Gupta", price: "₹3200/day" },
+            { name: "Maruti Suzuki Alto", driver: "Kavya Sharma", price: "₹600/day" },
+            { name: "Hyundai Grand i10", driver: "Reyansh Patel", price: "₹700/day" },
+            { name: "Tata Tiago", driver: "Vivaan Singh", price: "₹650/day" },
+            { name: "Mahindra Thar", driver: "Advik Yadav", price: "₹1600/day" },
+            { name: "Kia Sonet", driver: "Samaira Reddy", price: "₹950/day" },
+            { name: "Honda Amaze", driver: "Navya Choudhury", price: "₹850/day" },
+            { name: "Toyota Fortuner", driver: "Ishaan Joshi", price: "₹2000/day" },
+            { name: "Ford Mustang", driver: "Anaya Kaur", price: "₹4000/day" },
+            { name: "Renault Kwid", driver: "Atharv Verma", price: "₹550/day" },
+            { name: "Nissan Kicks", driver: "Prisha Gupta", price: "₹700/day" },
+            { name: "Datsun Redi-Go", driver: "Jai Kumar", price: "₹500/day" },
+            { name: "MG ZS EV", driver: "Dhriti Singh", price: "₹1100/day" },
           ];
 
           cars.forEach((car) => {
@@ -63,7 +91,7 @@
       addToCartButtons.forEach((button) => {
         button.addEventListener("click", () => {
           const carData = JSON.parse(button.dataset.car);
-          let cart = JSON.parse(localStorage.getItem("cart")) || []; // Get cart from localStorage or create empty array
+          let cart = JSON.parse(localStorage.getItem("cart")) || []; 
 
           cart.push(carData); // Add the car data to the cart array
           localStorage.setItem("cart", JSON.stringify(cart)); // Store updated cart in localStorage
