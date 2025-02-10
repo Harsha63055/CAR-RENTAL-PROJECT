@@ -47,6 +47,11 @@ body {
   cursor: pointer;
 }
 
+#searchBar{
+  border-radius: 10px;
+  
+}
+
 @media (max-width: 768px) {
   .nav-links {
       display: none;
@@ -63,6 +68,9 @@ body {
   }
   .menu-toggle {
       display: block;
+  }
+  #searchBar{
+    display: none;
   }
 }
 

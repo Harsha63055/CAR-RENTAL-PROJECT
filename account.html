@@ -1,72 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./account.css" />
     <style>
-        #order-items {
-            margin-top: 20px;
-        }
-        #order-items div {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
+      #order-items {
+        margin-top: 20px;
+      }
+      #order-items div {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <nav class="navbar">
-        <div class="logo"><img src="./carLogo.png" width="100px" alt=""></div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <ul class="nav-links">
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="./cart.html">My Trips</a></li>
-            <li><a href="./account.html">Profile</a></li>
-            <!-- <li><a href="./index.html">Logout</a></li> -->
-        </ul>
+      <div class="logo"><img src="./carLogo.png" width="100px" alt="" /></div>
+      
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <ul class="nav-links">
+        <li><a href="./home.html">Home</a></li>
+        <li><a href="./cart.html">My Trips</a></li>
+        <li><a href="./account.html">Profile</a></li>
+        <!-- <li><a href="./index.html">Logout</a></li> -->
+      </ul>
     </nav>
 
     <section class="account-container">
-        <h1>User</h1>
-        <div class="admin-options">
-            <button class="manage-cars"><a href="">My cars</a></button>
-            <button class="view-orders" onclick="displayOrders()">View Orders</button>
-            <button class="logout"><a href="./index.html">Logout</a></button>
-            <button><a href="./forms/form.html">Apply for Job</a></button>
-        </div>
-        <div id="order-items"></div>
+      <h1>User</h1>
+      <div class="admin-options">
+        <button class="manage-cars"><a href="">My cars</a></button>
+        <button class="view-orders" onclick="displayOrders()">
+          View Orders
+        </button>
+        <button class="logout"><a href="./index.html">Logout</a></button>
+        <button><a href="./forms/form.html">Apply for Job</a></button>
+      </div>
+      <div id="order-items"></div>
     </section>
 
     <script>
-        function toggleMenu() {
-            document.querySelector(".nav-links").classList.toggle("active");
+      function toggleMenu() {
+        document.querySelector(".nav-links").classList.toggle("active");
+      }
+
+      function displayOrders() {
+        const orderItemsDiv = document.getElementById("order-items");
+        orderItemsDiv.innerHTML = ""; // Clear previous orders
+
+        const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+        if (orders.length === 0) {
+          orderItemsDiv.innerHTML = "<p>No orders yet.</p>";
+          return;
         }
 
-        function displayOrders() {
-            const orderItemsDiv = document.getElementById('order-items');
-            orderItemsDiv.innerHTML = ''; // Clear previous orders
-
-            const orders = JSON.parse(localStorage.getItem('orders')) || [];
-
-            if (orders.length === 0) {
-                orderItemsDiv.innerHTML = "<p>No orders yet.</p>";
-                return;
-            }
-
-            orders.forEach(order => {
-                const orderDiv1 = document.createElement('div');
-                orderDiv1.innerHTML = `
+        orders.forEach((order) => {
+          const orderDiv1 = document.createElement("div");
+          orderDiv1.innerHTML = `
                     <h3>${order.name}</h3>
                     <p>Driver: ${order.driver}</p>
                     <p>Price: ${order.price}</p>
                     <hr>
                 `;
-                orderItemsDiv.appendChild(orderDiv1);
-            });
-        }
-
+          orderItemsDiv.appendChild(orderDiv1);
+        });
+      }
+      // Function to filter candies based on search input
+      searchBar.addEventListener("input", function () {
+        const searchTerm = searchBar.value.toLowerCase();
+        const filteredCandies = candies.filter((candy) =>
+          candy.name.toLowerCase().includes(searchTerm)
+        );
+        displayCandies(filteredCandies); // Display filtered candies
+      });
     </script>
-</body>
+  </body>
 </html>

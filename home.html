@@ -16,20 +16,27 @@
   <body>
     <nav class="navbar">
       <div class="logo"><img src="./carLogo.png" width="100px" alt=""></div>
+      <input
+        type="text"
+        id="searchBar"
+        class="form-control w-50 mx-auto"
+        placeholder="Search for cars..."
+      />
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <ul class="nav-links">
         <li><a href="./home.html">Home</a></li>
         <li><a href="./cart.html">My Trips</a></li>
         <li><a href="./account.html">Profile</a></li>
-        <!-- <li><a href="./index.html">Logout</a></li> -->
       </ul>
     </nav>
 
     <div class="car-container">
       <h2 style="text-align: center">Available Cars</h2>
-      <div class="car-list">
-        <script>
-          const cars = [
+      <div class="car-list" id="carList"></div>
+    </div>
+
+    <script>
+      const cars = [
             { name: "Maruti Suzuki Swift", driver: "Aarav Sharma", price: "₹800/day" },
             { name: "Hyundai Creta", driver: "Priya Patel", price: "₹1200/day" },
             { name: "Tata Nexon", driver: "Rahul Singh", price: "₹900/day" },
@@ -64,41 +71,33 @@
             { name: "MG ZS EV", driver: "Dhriti Singh", price: "₹1100/day" },
           ];
 
-          cars.forEach((car) => {
-            document.write(`
-                        <div class="car-card">
-                            <h3>${car.name}</h3>
-                            <p><strong>Driver:</strong> ${car.driver}</p>
-                            <p><strong>Price:</strong> ${car.price}</p>
-                            <button class="add-to-cart" data-car='${JSON.stringify(
-                              car
-                            )}'>Add to Cart</button>
-                        </div>
-                    `);
-          });
-        </script>
-      </div>
-    </div>
+      function displayCars(filteredCars) {
+        const carList = document.getElementById("carList");
+        carList.innerHTML = "";
+        filteredCars.forEach((car) => {
+          carList.innerHTML += `
+            <div class="car-card">
+                <h3>${car.name}</h3>
+                <p><strong>Driver:</strong> ${car.driver}</p>
+                <p><strong>Price:</strong> ${car.price}</p>
+                <button class="add-to-cart" data-car='${JSON.stringify(car)}'>Add to Cart</button>
+            </div>
+          `;
+        });
+      }
 
-    <script>
+      displayCars(cars);
+
+      document.getElementById("searchBar").addEventListener("input", function () {
+        const searchTerm = this.value.toLowerCase();
+        const filteredCars = cars.filter(car => car.name.toLowerCase().includes(searchTerm));
+        displayCars(filteredCars);
+      });
+
       function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("active");
       }
-
-      // Add to Cart functionality
-      const addToCartButtons = document.querySelectorAll(".add-to-cart");
-
-      addToCartButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          const carData = JSON.parse(button.dataset.car);
-          let cart = JSON.parse(localStorage.getItem("cart")) || []; 
-
-          cart.push(carData); // Add the car data to the cart array
-          localStorage.setItem("cart", JSON.stringify(cart)); // Store updated cart in localStorage
-
-          alert(`${carData.name} added to cart!`); // Optional: provide user feedback
-        });
-      });
     </script>
   </body>
 </html>
+
