@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Car Rental Portal</title>
     <link rel="stylesheet" href="home.css" />
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <style>
       .car-card {
         border: 1px solid #ccc;
@@ -17,7 +23,7 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="logo"><img src="./carLogo.png" width="100px" alt=""></div>
+      <div class="logo"><img src="./carLogo.png" width="100px" alt="" /></div>
       <input
         type="text"
         id="searchBar"
@@ -28,7 +34,11 @@
       <ul class="nav-links">
         <li><a href="./home.html">Home</a></li>
         <li><a href="./cart.html">My Trips</a></li>
-        <li><a href="./account.html"><ion-icon name="person"></ion-icon> Profile</a></li>
+        <li>
+          <a href="./account.html"
+            ><ion-icon name="person"></ion-icon> Profile</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -39,67 +49,109 @@
 
     <script>
       const cars = [
-            { name: "Maruti Suzuki Swift", driver: "Aarav Sharma", price: "₹800/day" },
-            { name: "Hyundai Creta", driver: "Priya Patel", price: "₹1200/day" },
-            { name: "Tata Nexon", driver: "Rahul Singh", price: "₹900/day" },
-            { name: "Mahindra XUV700", driver: "Diya Yadav", price: "₹1500/day" },
-            { name: "Kia Seltos", driver: "Aryan Reddy", price: "₹1100/day" },
-            { name: "Honda City", driver: "Anika Choudhury", price: "₹1000/day" },
-            { name: "Toyota Innova Crysta", driver: "Vikram Joshi", price: "₹1800/day" },
-            { name: "Ford EcoSport", driver: "Simran Kaur", price: "₹950/day" },
-            { name: "Renault Duster", driver: "Aditya Verma", price: "₹850/day" },
-            { name: "Nissan Magnite", driver: "Isha Gupta", price: "₹750/day" },
-            { name: "Volkswagen Polo", driver: "Rohan Kumar", price: "₹800/day" },
-            { name: "Skoda Kushaq", driver: "Neha Singh", price: "₹1050/day" },
-            { name: "MG Hector", driver: "Karan Patel", price: "₹1300/day" },
-            { name: "Jeep Compass", driver: "Saanvi Yadav", price: "₹1400/day" },
-            { name: "BMW 3 Series", driver: "Arjun Reddy", price: "₹2500/day" },
-            { name: "Mercedes-Benz C-Class", driver: "Aishwarya Choudhury", price: "₹2800/day" },
-            { name: "Audi A4", driver: "Vivek Joshi", price: "₹2200/day" },
-            { name: "Jaguar XF", driver: "Ananya Kaur", price: "₹3000/day" },
-            { name: "Land Rover Defender", driver: "Dhruv Verma", price: "₹3500/day" },
-            { name: "Volvo XC90", driver: "Ishaan Gupta", price: "₹3200/day" },
-            { name: "Maruti Suzuki Alto", driver: "Kavya Sharma", price: "₹600/day" },
-            { name: "Hyundai Grand i10", driver: "Reyansh Patel", price: "₹700/day" },
-            { name: "Tata Tiago", driver: "Vivaan Singh", price: "₹650/day" },
-            { name: "Mahindra Thar", driver: "Advik Yadav", price: "₹1600/day" },
-            { name: "Kia Sonet", driver: "Samaira Reddy", price: "₹950/day" },
-            { name: "Honda Amaze", driver: "Navya Choudhury", price: "₹850/day" },
-            { name: "Toyota Fortuner", driver: "Ishaan Joshi", price: "₹2000/day" },
-            { name: "Ford Mustang", driver: "Anaya Kaur", price: "₹4000/day" },
-            { name: "Renault Kwid", driver: "Atharv Verma", price: "₹550/day" },
-            { name: "Nissan Kicks", driver: "Prisha Gupta", price: "₹700/day" },
-            { name: "Datsun Redi-Go", driver: "Jai Kumar", price: "₹500/day" },
-            { name: "MG ZS EV", driver: "Dhriti Singh", price: "₹1100/day" },
-          ];
+        {
+          name: "Maruti Suzuki Swift",
+          driver: "Aarav Sharma",
+          price: "₹800/day",
+        },
+        { name: "Hyundai Creta", driver: "Priya Patel", price: "₹1200/day" },
+        { name: "Tata Nexon", driver: "Rahul Singh", price: "₹900/day" },
+        { name: "Mahindra XUV700", driver: "Diya Yadav", price: "₹1500/day" },
+        { name: "Kia Seltos", driver: "Aryan Reddy", price: "₹1100/day" },
+        { name: "Honda City", driver: "Anika Choudhury", price: "₹1000/day" },
+        {
+          name: "Toyota Innova Crysta",
+          driver: "Vikram Joshi",
+          price: "₹1800/day",
+        },
+        { name: "Ford EcoSport", driver: "Simran Kaur", price: "₹950/day" },
+        { name: "Renault Duster", driver: "Aditya Verma", price: "₹850/day" },
+        { name: "Nissan Magnite", driver: "Isha Gupta", price: "₹750/day" },
+        { name: "Volkswagen Polo", driver: "Rohan Kumar", price: "₹800/day" },
+        { name: "Skoda Kushaq", driver: "Neha Singh", price: "₹1050/day" },
+        { name: "MG Hector", driver: "Karan Patel", price: "₹1300/day" },
+        { name: "Jeep Compass", driver: "Saanvi Yadav", price: "₹1400/day" },
+        { name: "BMW 3 Series", driver: "Arjun Reddy", price: "₹2500/day" },
+        {
+          name: "Mercedes-Benz C-Class",
+          driver: "Aishwarya Choudhury",
+          price: "₹2800/day",
+        },
+        { name: "Audi A4", driver: "Vivek Joshi", price: "₹2200/day" },
+        { name: "Jaguar XF", driver: "Ananya Kaur", price: "₹3000/day" },
+        {
+          name: "Land Rover Defender",
+          driver: "Dhruv Verma",
+          price: "₹3500/day",
+        },
+        { name: "Volvo XC90", driver: "Ishaan Gupta", price: "₹3200/day" },
+        {
+          name: "Maruti Suzuki Alto",
+          driver: "Kavya Sharma",
+          price: "₹600/day",
+        },
+        {
+          name: "Hyundai Grand i10",
+          driver: "Reyansh Patel",
+          price: "₹700/day",
+        },
+        { name: "Tata Tiago", driver: "Vivaan Singh", price: "₹650/day" },
+        { name: "Mahindra Thar", driver: "Advik Yadav", price: "₹1600/day" },
+        { name: "Kia Sonet", driver: "Samaira Reddy", price: "₹950/day" },
+        { name: "Honda Amaze", driver: "Navya Choudhury", price: "₹850/day" },
+        { name: "Toyota Fortuner", driver: "Ishaan Joshi", price: "₹2000/day" },
+        { name: "Ford Mustang", driver: "Anaya Kaur", price: "₹4000/day" },
+        { name: "Renault Kwid", driver: "Atharv Verma", price: "₹550/day" },
+        { name: "Nissan Kicks", driver: "Prisha Gupta", price: "₹700/day" },
+        { name: "Datsun Redi-Go", driver: "Jai Kumar", price: "₹500/day" },
+        { name: "MG ZS EV", driver: "Dhriti Singh", price: "₹1100/day" },
+      ];
 
       function displayCars(filteredCars) {
         const carList = document.getElementById("carList");
         carList.innerHTML = "";
-        filteredCars.forEach((car) => {
-          carList.innerHTML += `
-            <div class="car-card">
-                <h3>${car.name}</h3>
-                <p><strong>Driver:</strong> ${car.driver}</p>
-                <p><strong>Price:</strong> ${car.price}</p>
-                <button class="add-to-cart" data-car='${JSON.stringify(car)}'>Add to Cart</button>
-            </div>
+        filteredCars.forEach((car, index) => {
+          const carCard = document.createElement("div");
+          carCard.classList.add("car-card");
+          carCard.innerHTML = `
+            <h3>${car.name}</h3>
+            <p><strong>Driver:</strong> ${car.driver}</p>
+            <p><strong>Price:</strong> ${car.price}</p>
+            <button class="add-to-cart" data-index="${index}">Add to Cart</button>
           `;
+          carList.appendChild(carCard);
+        });
+
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const index = event.target.getAttribute("data-index");
+            addToCart(cars[index]);
+          });
         });
       }
 
-      displayCars(cars);
+      function addToCart(car) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        cart.push(car);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        alert(`${car.name} added to cart!`);
+      }
 
-      document.getElementById("searchBar").addEventListener("input", function () {
-        const searchTerm = this.value.toLowerCase();
-        const filteredCars = cars.filter(car => car.name.toLowerCase().includes(searchTerm));
-        displayCars(filteredCars);
-      });
+      document
+        .getElementById("searchBar")
+        .addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase();
+          const filteredCars = cars.filter((car) =>
+            car.name.toLowerCase().includes(searchTerm)
+          );
+          displayCars(filteredCars);
+        });
 
       function toggleMenu() {
         document.querySelector(".nav-links").classList.toggle("active");
       }
+
+      displayCars(cars);
     </script>
   </body>
 </html>
-
