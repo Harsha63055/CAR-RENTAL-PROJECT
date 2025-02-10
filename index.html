@@ -1,79 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      #container {
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 50px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-      #login {
-        border: 2px solid black;
-
-        text-align: center;
-        padding: 40px 20px;
-        width: 300px;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 50px;
-        border-radius: 20px;
-        box-shadow: 0 0 20px;
-      }
-      #lbtn {
-        width: 100px;
-        font-size: 20px;
-        background-color: rgb(129, 189, 241);
-        border: none;
-        border-radius: 10px;
-      }
-      #lbtn:hover {
-        background-color: rgb(117, 107, 107);
-        color: rgb(238, 229, 229);
-      }
-    </style>
-  </head>
-  <body>
-    <div id="container">
-      <div>
-        <a href=""><img src="./carLogo.png" width="300px" alt="" /></a>
-      </div>
-      <div id="login">
-        <h1>
-          <a href="./index.html" style="text-decoration: none"
-            >User / <a href="./admin.html" style="text-decoration: none">Admin</a></a
-          >
-        </h1>
-        <form action="">
-          <label for="name" style="font-size: 30px">Username </label
-          ><br /><br />
-          <input
-            type="text"
-            name="username"
-            name="username"
-            id="user"
-          /><br /><br />
-          <label for="pswd" style="font-size: 30px">Password </label
-          ><br /><br />
-          <input type="password" name="pswd" id="pass" /><br /><br />
-          <input
-            type="submit"
-            value="Login"
-            id="lbtn"
-            formaction="./home.html"
-          />
-          <p>
-            Not have an account?<a href="" style="text-decoration: none">
-              Signup</a
-            >
-          </p>
-        </form>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+    }
+    .login{
+      background-color: aliceblue;
+      text-align: center;
+      height: 300px;
+      width: 300px;
+      border: 2px solid;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 0 20px white;
+    }
+    
+    .login1{
+      
+      text-align: center;
+      height: 300px;
+      width: 300px;
+      border-radius: 10px;
+      padding: 10px;
+      
+    }
+    .login input{
+      border-radius: 5px;
+      border-color: aliceblue;
+    }
+    .login input:hover{
+      border: none;
+      width: 70%;
+      height: 25px;
+      border-radius: 12px;
+    }
+    #log:hover{
+      background-color:aqua ;
+    }
+    #container{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+    .login a{
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="login1">
+      <img src="./car.webp" width="300px" style="border-radius: 30px;" alt="">
     </div>
-  </body>
+    <div class="login">
+      <h1>USER LOGIN</h1>
+      <form action="">
+        <!-- <label for="">username</label> -->
+        <input type="text" placeholder="Username.." name="usern"><br><br>
+        <!-- <label for="">password</label> -->
+        <input type="password" placeholder="Password.." name="pswd"><br><br>
+        <input type="submit" value="Login" id="log" formaction="./home.html"><br><br>
+        <a href="">Not have an account?Signup</a><br><br>
+        <a href="./admin.html">Admin login</a>
+      </form>
+    </div>
+
+  </div>
+</body>
 </html>
