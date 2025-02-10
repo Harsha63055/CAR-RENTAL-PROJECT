@@ -117,7 +117,7 @@
             <h3>${car.name}</h3>
             <p><strong>Driver:</strong> ${car.driver}</p>
             <p><strong>Price:</strong> ${car.price}</p>
-            <button class="add-to-cart" data-index="${index}">Add to Cart</button>
+            <button class="add-to-cart" data-index="${index}">Add to Trip</button>
           `;
           carList.appendChild(carCard);
         });
@@ -134,7 +134,7 @@
         let cart = JSON.parse(localStorage.getItem("cart")) || [];
         cart.push(car);
         localStorage.setItem("cart", JSON.stringify(cart));
-        alert(`${car.name} added to cart!`);
+        //alert(`${car.name} added to cart!`);
       }
 
       document
