@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart</title>
     <link rel="stylesheet" href="cart.css" />
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </head>
   <body>
     <nav class="navbar">
@@ -15,7 +21,11 @@
       <ul class="nav-links">
         <li><a href="./home.html">Home</a></li>
         <li><a href="./cart.html">My Trips</a></li>
-        <li><a href="./account.html"><ion-icon name="person"></ion-icon> Profile</a></li>
+        <li>
+          <a href="./account.html"
+            ><ion-icon name="person"></ion-icon> Profile</a
+          >
+        </li>
       </ul>
     </nav>
 
@@ -35,7 +45,7 @@
 
       function displayCart() {
         const cartItemsDiv = document.getElementById("cart-items");
-        cartItemsDiv.innerHTML = ""; 
+        cartItemsDiv.innerHTML = "";
 
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -70,8 +80,23 @@
       }
 
       function proceedToCheckOut() {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        if (cart.length === 0) {
+          alert("Your cart is empty!");
+          return;
+        }
+
+        let orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+        // Append current cart items to orders
+        orders = orders.concat(cart);
+        localStorage.setItem("orders", JSON.stringify(orders));
+
+        // Clear cart after checkout
         localStorage.removeItem("cart");
-        alert("Thank you for your booking!");
+        alert("Thank you for your booking! Your order has been placed.");
+
         displayCart();
       }
 
