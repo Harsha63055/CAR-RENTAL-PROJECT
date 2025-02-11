@@ -1,0 +1,56 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  background-image: url(./bg.png);
+  background-size: cover; /* Scales image to cover entire screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating */
+  height: 100vh; /* Ensures full height */
+}
+::-webkit-scrollbar{
+    display: none;
+}
+#container{
+    border: 2px solid none;
+    border-radius: 20px;
+    width: 230px;
+    margin: 0 20px;
+    margin-top: 10px;
+    height: 400px;
+    padding: 10px;
+    text-align: center;
+    background-image: linear-gradient(90deg,rgba(164, 139, 109, 0.418), rgb(32, 47, 26));
+}
+#container p{
+    text-shadow: 0 0 20px wheat;
+}
+#container button:hover{
+    background-color: rgb(92, 74, 91);
+    color: antiquewhite;
+    background-image: linear-gradient(90deg,rgb(255, 33, 151), rgb(123, 0, 255));
+}
+.loginbtn,.signbtn{
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: cadetblue;
+    font-size: large;
+}
+.loginbtn a{
+    text-decoration: none;
+    color: black;
+}
+.signbtn a{
+    text-decoration: none;
+    color:black;
+}
+@media screen and (max-width: 600px) {
+    body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }  
+}
