@@ -1,79 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    body {
-      background-color: black;
-    }
-    .login{
-      background-color: aliceblue;
-      text-align: center;
-      height: 300px;
-      width: 300px;
-      border: 2px solid;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 0 20px white;
-    }
-    
-    .login1{
-      
-      text-align: center;
-      height: 300px;
-      width: 300px;
-      border-radius: 10px;
-      padding: 10px;
-      
-    }
-    .login input{
-      border-radius: 5px;
-      border-color: aliceblue;
-    }
-    .login input:hover{
-      border: none;
-      width: 70%;
-      height: 25px;
-      border-radius: 12px;
-    }
-    #log:hover{
-      background-color:aqua ;
-    }
-    #container{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-    }
-    .login a{
-      text-decoration: none;
-      color: black;
-    }
-    .login a:hover{
-      color: blue;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RentoCar</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #f4f4f4;
+        background-image: url(./bg.png);
+        background-size: cover; /* Scales image to cover entire screen */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents repeating */
+        height: 100vh; /* Ensures full height */
+      }
+      ::-webkit-scrollbar{
+          display: none;
+      }
+      #container{
+          border: 2px solid none;
+          border-radius: 20px;
+          width: 230px;
+          margin: 0 20px;
+          margin-top: 10px;
+          height: 400px;
+          padding: 10px;
+          text-align: center;
+          background-image: linear-gradient(90deg,rgba(164, 139, 109, 0.418), rgb(32, 47, 26));
+      }
+      #container p{
+          text-shadow: 0 0 20px wheat;
+      }
+      #container button:hover{
+          background-color: rgb(92, 74, 91);
+          color: antiquewhite;
+          background-image:linear-gradient(90deg,rgb(54, 15, 31), rgb(139, 136, 142));
+      }
+      .loginbtn,.signbtn{
+          width: 200px;
+          height: 40px;
+          border: none;
+          border-radius: 10px;
+          background-color: cadetblue;
+          font-size: large;
+      }
+      .loginbtn a{
+          text-decoration: none;
+          color: black;
+      }
+      .signbtn a{
+          text-decoration: none;
+          color:black;
+      }
+      .admin{
+        text-decoration: none;
+        color: bisque;
+      }
+      .admin:hover{
+        text-decoration:underline;
+        color: rgb(129, 129, 209);
+      }
+    </style>
 </head>
 <body>
-  <div id="container">
-    <div class="login1">
-      <img src="./car.webp" width="300px" style="border-radius: 30px;" alt="">
-    </div>
-    <div class="login">
-      <h1>USER LOGIN</h1>
-      <form action="">
-        <!-- <label for="">username</label> -->
-        <input type="text" placeholder="Username.." name="usern" required><br><br>
-        <!-- <label for="">password</label> -->
-        <input type="password" placeholder="Password.." name="pswd" required><br><br>
-        <input type="submit" value="Login" id="log" formaction="./USER/home.html"><br><br>
-        <a href="">Not have an account?Signup</a><br><br>
-        <a href="./admin.html">Admin login</a><br><br>
-        <a href="./USER/home.html">Login as geust</a>
-      </form>
-    </div>
+    <div id="container">
+        <h1 id="title" style="color: wheat;">RentoCar</h1>
+        <h3 style="color: beige;">USER LOGIN</h3>
+        <form action="">
+          <input type="text" name="username" placeholder="Username" required style="height: 30px;border-radius:10px;border:none;"><br><br>
+          <input type="password" name="password" placeholder="Password" required style="height: 30px;border-radius:10px;border:none"><br><br>
+          <button class="loginbtn" formaction="./USER/home.html">LogIn</button><br><br>
+          <button class="signbtn"><a href="">SignUp</a></button><br><br>
+          <a href="./admin.html" class="admin">Admin login?</a>
+          <a href="./USER/home.html" class="admin">Login as Guest</a>
+        </form>
 
-  </div>
+    </div>
 </body>
 </html>
