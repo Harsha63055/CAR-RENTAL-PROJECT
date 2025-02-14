@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RentoCar</title>
+    <script type="module" src="./auth3.js"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -43,8 +44,8 @@
           background-image: linear-gradient(90deg,rgb(54, 15, 31), rgb(139, 136, 142));
       }
       .loginbtn,.signbtn{
-          width: 200px;
-          height: 40px;
+        width: 100px;
+        height: 30px;
           border: none;
           border-radius: 10px;
           background-color: cadetblue;
@@ -72,11 +73,11 @@
     <div id="container">
         <h1 id="title" style="color: wheat;">RentoCar</h1>
         <h3 style="color: beige;">ADMIN LOGIN</h3>
-        <form action="">
-          <input type="number" name="username" placeholder="Id number" required style="height: 30px;border-radius:10px;border:none;"><br><br>
+        <form action="" id="login">
+          <input type="mail" name="username" placeholder="Idnumber@gmail.com" required style="height: 30px;border-radius:10px;border:none;"><br><br>
           <input type="password" name="password" placeholder="Password" required style="height: 30px;border-radius:10px;border:none"><br><br>
           <button class="loginbtn" formaction="./ADMIN/ADhome.html">LogIn</button><br><br>
-          <button class="signbtn"><a href="">SignUp</a></button><br><br>
+          <button class="signbtn"><a href="./usersignup.html">SignUp</a></button><br><br>
           <a href="./index1.html" class="admin">User login?</a>
         </form>
 

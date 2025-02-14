@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./auth1.js" type="module" defer></script>
+    <style>
+      body {
+        background-image: url(./bgsignup.webp);
+        background-size: cover; /* Scales image to cover entire screen */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents repeating */
+        height: 100vh; /* Ensures full height */
+      }
+      #signup {
+        border: 2px solid black;
+        border-radius: 20px;
+        text-align: center;
+        padding: 20px;
+        width: 400px;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        background: linear-gradient(rgba(31, 33, 60, 0.4), rgb(147, 143, 161));
+      }
+      ::-webkit-scrollbar{
+        display: none;
+      }
+      .mail,
+      .pswd {
+        border: none;
+        border-radius: 5px;
+        height: 20px;
+      }
+      .sign {
+        border: none;
+        padding: 10px 20px;
+        border-radius: 10px;
+      }
+      .mail:hover {
+        border-bottom: solid black;
+      }
+      .pswd:hover {
+        border-bottom: solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="" id="signup">
+        <h1>CREATE AN ACCOUNT</h1>
+        <input
+          type="email"
+          class="mail"
+          placeholder="Enter you Mail Id.."
+        /><br /><br />
+        <input
+          type="text"
+          class="pswd"
+          placeholder="Enter your Password.."
+        /><br /><br />
+        <input
+          type="submit"
+          value="SignUp"
+          class="sign"
+          formaction="./index1.html"
+        />
+      </form>
+    </div>
+  </body>
+</html>
