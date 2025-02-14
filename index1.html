@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RentoCar</title>
+    <script src="./auth2.js" type="module" defer></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -31,7 +32,7 @@
           height: 400px;
           padding: 10px;
           text-align: center;
-          background-image: linear-gradient(90deg,rgba(164, 139, 109, 0.418), rgb(32, 47, 26));
+          background-image: linear-gradient(90deg,rgba(61, 70, 115, 0.747), rgb(12, 11, 38));
       }
       #container p{
           text-shadow: 0 0 20px wheat;
@@ -42,8 +43,8 @@
           background-image:linear-gradient(90deg,rgb(54, 15, 31), rgb(139, 136, 142));
       }
       .loginbtn,.signbtn{
-          width: 200px;
-          height: 40px;
+          width: 100px;
+          height: 30px;
           border: none;
           border-radius: 10px;
           background-color: cadetblue;
@@ -71,13 +72,13 @@
     <div id="container">
         <h1 id="title" style="color: wheat;">RentoCar</h1>
         <h3 style="color: beige;">USER LOGIN</h3>
-        <form action="">
-          <input type="text" name="username" placeholder="Username" required style="height: 30px;border-radius:10px;border:none;"><br><br>
+        <form action="" id="login">
+          <input type="text" name="username" placeholder="Username or EmailId" required style="height: 30px;border-radius:10px;border:none;"><br><br>
           <input type="password" name="password" placeholder="Password" required style="height: 30px;border-radius:10px;border:none"><br><br>
           <button class="loginbtn" formaction="./USER/home.html">LogIn</button><br><br>
-          <button class="signbtn"><a href="">SignUp</a></button><br><br>
+          <button class="signbtn"><a href="./usersignup.html">SignUp</a></button><br><br>
           <a href="./admin.html" class="admin">Admin login?</a>
-          <a href="./USER/home.html" class="admin">Login as Guest</a>
+          <!-- <a href="./USER/home.html" class="admin">Login as Guest</a> -->
         </form>
 
     </div>
