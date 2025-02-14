@@ -17,12 +17,12 @@ import {
     //   return;
     // }
   
-    createUserWithEmailAndPassword(auth, email, password)
+    signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("User signed up:", userCredential.user);
         alert("Signup successful! Redirecting to login...");
   
-        window.location.href = "./admin.html";
+        window.location.href = "../ADMIN/ADhome.html";
       })
       .catch((error) => {
         console.error("Error:", error.message);
