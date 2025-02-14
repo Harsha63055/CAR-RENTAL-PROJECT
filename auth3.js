@@ -4,7 +4,7 @@ import {
     signInWithEmailAndPassword,
   } from "./firebase.js";
   
-  let signup = document.getElementById("adminSignup");
+  let signup = document.getElementById("Usersignup");
   
   signup.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -20,9 +20,9 @@ import {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log("User signed up:", userCredential.user);
-        alert("Signup successful! Redirecting to login...");
+        alert("Signup successful! Redirecting to User login...");
   
-        window.location.href = "./admin.html";
+        window.location.href = "./index1.html";
       })
       .catch((error) => {
         console.error("Error:", error.message);
