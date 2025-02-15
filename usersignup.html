@@ -1,72 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="./auth3.js" type="module" defer></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Signup</title>
+    <script src="./auth1.js" type="module" defer></script>
     <style>
       body {
-        background-image: url(./bgsignup.webp);
-        background-size: cover; /* Scales image to cover entire screen */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat; /* Prevents repeating */
-        height: 100vh; /* Ensures full height */
+        background: url(./bgsignup.webp) no-repeat center center/cover;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      #Usersignup {
-        border: 2px solid black;
+      #signup {
         border-radius: 20px;
         text-align: center;
         padding: 20px;
-        width: 400px;
-        margin-top: 100px;
-        margin-left: auto;
-        margin-right: auto;
-        background: linear-gradient(rgba(31, 33, 60, 0.4), rgb(147, 143, 161));
+        width: 350px;
+        background: linear-gradient(rgba(31, 33, 60, 0.7), rgb(147, 143, 161));
       }
-      ::-webkit-scrollbar{
-        display: none;
-      }
-      .mail,
-      .pswd {
-        border: none;
+      input {
+        width: 90%;
+        height: 30px;
         border-radius: 5px;
-        height: 20px;
-      }
-      .sign {
         border: none;
+        padding: 5px;
+        margin-bottom: 15px;
+      }
+      button {
         padding: 10px 20px;
         border-radius: 10px;
-      }
-      .mail:hover {
-        border-bottom: solid black;
-      }
-      .pswd:hover {
-        border-bottom: solid black;
+        cursor: pointer;
       }
     </style>
-  </head>
-  <body>
-    <div>
-      <form action="" id="Usersignup">
-        <h1>CREATE AN ACCOUNT</h1>
-        <input
-          type="email"
-          class="mail"
-          placeholder="Enter you Mail Id.."
-        /><br /><br />
-        <input
-          type="text"
-          class="pswd"
-          placeholder="Enter your Password.."
-        /><br /><br />
-        <input
-          type="submit"
-          value="SignUp"
-          class="sign"
-          formaction="./index1.html"
-        />
-      </form>
-    </div>
-  </body>
+</head>
+<body>
+    <form id="signup">
+        <h1>Create an Account</h1>
+        <input type="email" id="email" placeholder="Enter your Email" required>
+        <input type="password" id="password" placeholder="Enter your Password" required>
+        <button type="submit">Sign Up</button>
+    </form>
+</body>
 </html>

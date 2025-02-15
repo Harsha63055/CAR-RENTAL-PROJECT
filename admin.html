@@ -3,84 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RentoCar</title>
-    <script type="module" src="./auth2.js"></script>
+    <title>Admin Login</title>
+    <script src="./auth2.js" type="module" defer></script>
     <style>
       body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        background-color: #f4f4f4;
-        background-image: url(./bg.png);
-        background-size: cover; /* Scales image to cover entire screen */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat; /* Prevents repeating */
-        height: 100vh; /* Ensures full height */
-        
+        align-items: center;
+        height: 100vh;
+        background: url(./admin-bg.jpg) no-repeat center center/cover;
       }
-      ::-webkit-scrollbar{
-          display: none;
+      #admin-container {
+        border-radius: 20px;
+        width: 350px;
+        padding: 20px;
+        text-align: center;
+        background: linear-gradient(90deg, rgba(61, 70, 115, 0.8), rgb(12, 11, 38));
+        color: wheat;
       }
-      #container{
-          border: 2px solid none;
-          border-radius: 20px;
-          width: 230px;
-          margin: 0 20px;
-          margin-top: 10px;
-          height: 400px;
-          padding: 10px;
-          text-align: center;
-          background-image: linear-gradient(90deg,rgba(164, 139, 109, 0.705), rgb(135, 15, 35));
-      }
-      #container p{
-          text-shadow: 0 0 20px wheat;
-      }
-      #container button:hover{
-          background-color: rgb(92, 74, 91);
-          color: antiquewhite;
-          background-image: linear-gradient(90deg,rgb(54, 15, 31), rgb(139, 136, 142));
-      }
-      .loginbtn,.signbtn{
-        width: 100px;
+      input {
+        width: 90%;
         height: 30px;
-          border: none;
-          border-radius: 10px;
-          background-color: cadetblue;
-          font-size: large;
+        border-radius: 10px;
+        border: none;
+        padding: 5px;
+        margin-bottom: 15px;
       }
-      .loginbtn a{
-          text-decoration: none;
-          color: black;
+      button {
+        width: 120px;
+        height: 35px;
+        border: none;
+        border-radius: 10px;
+        background-color: cadetblue;
+        font-size: large;
+        cursor: pointer;
       }
-      .signbtn a{
-          text-decoration: none;
-          color:black;
-      }
-      .admin{
+      .back {
         text-decoration: none;
         color: bisque;
+        display: block;
+        margin-top: 10px;
       }
-      .admin:hover{
-        text-decoration:underline;
+      .back:hover {
+        text-decoration: underline;
         color: rgb(129, 129, 209);
       }
     </style>
 </head>
 <body>
-    <div id="container">
-        <h1 id="title" style="color: wheat;">RentoCar</h1>
-        <h3 style="color: beige;">ADMIN LOGIN</h3>
-        <form action="" id="adminlogin">
-          <input type="mail" name="username" placeholder="Idnumber@gmail.com" required style="height: 30px;border-radius:10px;border:none;"><br><br>
-          <input type="password" name="password" placeholder="Password" required style="height: 30px;border-radius:10px;border:none"><br><br>
-          <button class="loginbtn" formaction="./ADMIN/ADhome.html">LogIn</button><br><br>
-          <button class="signbtn"><a href="./adminsingup.html">SignUp</a></button><br><br>
-          <a href="./index1.html" class="admin">User login?</a>
+    <div id="admin-container">
+        <h1>Admin Portal</h1>
+        <h3>Login</h3>
+        <form id="adminlogin">
+          <input type="email" id="email" placeholder="Admin Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit">Log In</button>
+          <br><br>
+          <a href="./index1.html" class="back">Back to User Login</a>
         </form>
-
     </div>
 </body>
 </html>
