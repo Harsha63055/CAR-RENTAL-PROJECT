@@ -4,7 +4,7 @@ import {
   signInWithEmailAndPassword,
 } from "./firebase.js";
 
-let signup = document.getElementById("adminSignup");
+let signup = document.getElementById("Signup");
 
 signup.addEventListener("submit", (e) => {
   e.preventDefault();
