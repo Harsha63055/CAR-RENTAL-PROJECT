@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RentoCar</title>
+    <title>RentoCar - User Login</title>
     <script src="./auth4.js" type="module" defer></script>
     <style>
       body {
@@ -13,74 +13,63 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        background-color: #f4f4f4;
-        background-image: url(./bg.png);
-        background-size: cover; /* Scales image to cover entire screen */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat; /* Prevents repeating */
-        height: 100vh; /* Ensures full height */
+        background: #f4f4f4 url(./bg.png) no-repeat center center/cover;
+        height: 100vh;
       }
-      ::-webkit-scrollbar{
+      ::-webkit-scrollbar {
           display: none;
       }
-      #container{
-          border: 2px solid none;
+      #container {
           border-radius: 20px;
-          width: 230px;
-          margin: 0 20px;
-          margin-top: 10px;
-          height: 400px;
-          padding: 10px;
+          width: 300px;
+          margin-top: 50px;
+          padding: 20px;
           text-align: center;
-          background-image: linear-gradient(90deg,rgba(61, 70, 115, 0.747), rgb(12, 11, 38));
+          background: linear-gradient(90deg, rgba(61, 70, 115, 0.8), rgb(12, 11, 38));
+          color: wheat;
       }
-      #container p{
-          text-shadow: 0 0 20px wheat;
-      }
-      #container button:hover{
-          background-color: rgb(92, 74, 91);
-          color: antiquewhite;
-          background-image:linear-gradient(90deg,rgb(54, 15, 31), rgb(139, 136, 142));
-      }
-      .loginbtn,.signbtn{
-          width: 100px;
+      input {
+          width: 90%;
           height: 30px;
+          border-radius: 10px;
+          border: none;
+          padding: 5px;
+          margin-bottom: 15px;
+      }
+      button {
+          width: 100px;
+          height: 35px;
           border: none;
           border-radius: 10px;
           background-color: cadetblue;
           font-size: large;
+          cursor: pointer;
       }
-      .loginbtn a{
-          text-decoration: none;
-          color: black;
-      }
-      .signbtn a{
-          text-decoration: none;
-          color:black;
-      }
-      .admin{
+      .admin {
         text-decoration: none;
         color: bisque;
+        display: block;
+        margin-top: 10px;
       }
-      .admin:hover{
-        text-decoration:underline;
+      .admin:hover {
+        text-decoration: underline;
         color: rgb(129, 129, 209);
       }
     </style>
 </head>
 <body>
     <div id="container">
-        <h1 id="title" style="color: wheat;">RentoCar</h1>
-        <h3 style="color: beige;">USER LOGIN</h3>
-        <form action="" id="Userlogin">
-          <input type="text" name="username" placeholder="Username or EmailId" required style="height: 30px;border-radius:10px;border:none;"><br><br>
-          <input type="password" name="password" placeholder="Password" required style="height: 30px;border-radius:10px;border:none"><br><br>
-          <button class="loginbtn" formaction="./USER/home.html">LogIn</button><br><br>
-          <button class="signbtn"><a href="./usersignup.html">SignUp</a></button><br><br>
+        <h1>RentoCar</h1>
+        <h3>User Login</h3>
+        <form id="Userlogin">
+          <input type="email" id="email" placeholder="Email Address" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <button type="submit">Log In</button>
+          <br><br>
+          <button type="button" onclick="window.location.href='./usersignup.html'">Sign Up</button>
+          <br><br>
           <a href="./admin.html" class="admin">Admin login?</a>
-          <!-- <a href="./USER/home.html" class="admin">Login as Guest</a> -->
         </form>
-
     </div>
 </body>
 </html>
